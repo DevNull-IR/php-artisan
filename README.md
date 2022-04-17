@@ -21,6 +21,6 @@ defult port: `8000`;
 
 set host name in local project:
 
-
+defult hostName: ``
 
 `php artisan serve -host=localhost`
