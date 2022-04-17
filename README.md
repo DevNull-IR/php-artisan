@@ -6,3 +6,5 @@ php artisan file in your project
 # use
 
 start development in local your app
+
+`php artisan serve`
