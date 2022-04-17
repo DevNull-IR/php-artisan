@@ -1,0 +1,54 @@
+#!/usr/bin/env php
+<?php
+$argv = array_unique($argv);
+$serve = false;
+//echo count($argv);
+foreach ($argv as $key => $value){
+    if($value == 'serve'){
+        $serve = true;
+    }
+}
+foreach ($argv as $key => $value){
+    if ($serve) {
+        if ($value == '-h' or $value == "-help"){
+            print("
+\033[33mDescription:\033[37m
+    Serve the application on the PHP development server
+    
+ \033[33mUsage:\033[37m
+ 
+    serve [options]
+    
+ \033[33mOptions:\033[37m
+      -host[=HOST]     The host address to serve the application on [default: \"127.0.0.1\"]
+      -port[=PORT]     The port to serve the application on");
+            die();
+        }
+
+    }
+}
+if ($serve){
+    print("\033[32mConnected To server . . .\033[37m\n\n\n\n");
+}
+$port = 8000;
+$host = '127.0.0.1';
+foreach ($argv as $key => $value){
+    if ($serve) {
+        if (preg_match('/\-port\=([0-9]+)/',$value,$match)){
+            $port = $match[1];
+        }
+    }
+}
+foreach ($argv as $key => $value){
+    if ($serve) {
+        if (preg_match('/\-host\=([0-9-a-z-A-Z-\.]+)/',$value,$match)){
+            $host = $match[1];
+        }
+    }
+}
+foreach ($argv as $key => $value){
+    if ($serve) {
+        print (exec("php -S {$host}:{$port}"));
+        die;
+    }
+}
