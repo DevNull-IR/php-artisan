@@ -12,3 +12,6 @@ Information command:
 start development in local your app
 
 `php artisan serve`
+
+set port in local project:
+
