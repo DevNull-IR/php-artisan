@@ -7,7 +7,7 @@ php artisan file in your project
 
 Information command:
 
-``
+`php artisan serve -help`
 
 start development in local your app
 
