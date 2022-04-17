@@ -15,3 +15,4 @@ start development in local your app
 
 set port in local project:
 
+`php artisan serve -port=122222`
